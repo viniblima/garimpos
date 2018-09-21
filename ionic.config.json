@@ -1,0 +1,7 @@
+{
+  "name": "Garimpos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
