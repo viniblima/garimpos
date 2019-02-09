@@ -1,37 +1,78 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { Produto } from '../../domain/produto/produto';
+import { HomePage } from '../home/home';
+import { ProdutoPage } from '../produto/produto';
+import { Storage } from '@ionic/storage';
+import { LoginPage } from '../login/login';
+import { CarrinhoPage } from '../carrinho/carrinho';
+import { MinhaContaPage } from '../minha-conta/minha-conta';
 
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
 })
 export class ListPage {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  public type;
+  public url;
+  public produto: Produto[];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public storage: Storage,
+    public alertCtrl: AlertController,
+    private http: Http) 
+    {
+      
+      this.type = this.navParams.get("tipoEscolhido");
+      console.log(this.type);
+      this.url = 'http://vservices.com.br/servicos/servicos/get_produtos/' + this.type;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+      this.http.get(this.url)
+      .map(res =>res.json())
+      .toPromise()
+      .then(produtos => {
+        this.produto = produtos
+        console.log(this.produto);
+      })
 
-    // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
+      .catch(err =>{
+        console.log(err);
+      })
+    }
 
-    this.items = [];
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+    home(){
+      this.navCtrl.setRoot(HomePage);
+    }
+    seleciona(produto){
+      this.navCtrl.push(ProdutoPage, {produtoEscolhido: produto});
+    }
+    logout(){
+      let alert = this.alertCtrl.create({
+        
+        title: "Deseja sair?",
+        
       });
+      alert.addButton({
+        text: "Sim",
+        handler: data => {
+          this.storage.remove('usuario');
+          this.navCtrl.setRoot(LoginPage);
+        }
+      });
+      alert.addButton({
+        text: "Não"
+      });
+      alert.present();
+    }
+    carrinho(){
+      this.navCtrl.push(CarrinhoPage);
+    }
+    minhaConta(){
+      this.navCtrl.setRoot(MinhaContaPage);
     }
   }
 
-  itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
-      item: item
-    });
-  }
-}
+ 
+

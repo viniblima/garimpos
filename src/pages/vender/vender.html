@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-navbar color='color1'>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" class ='icon'></ion-icon>
+    </button>
+
+    <div class = 'titleicon'>
+    <img src ='assets/imgs/logo.png' width="50px" style="display:inline-block" height="50px" (click)='home()'/>
+    </div>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="minhaConta()">
+            <ion-icon name="person"></ion-icon>
+          </button>
+      <button ion-button icon-only (click)="carrinho()">
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style='background-color: #ffa07a'>
+  <ion-content padding>
+    
+      
+      <button ion-button color="color1" (click)="getImage()" block>Selecionar na Galeria</button>
+      <button ion-button color="color1" (click)="getCamera()" block>Tirar Foto</button>
+      <img [src] = 'base64Image' *ngIf='base64Image != undefined'/>
+    
+    <ion-item>
+      
+    </ion-item>
+   
+    
+    <ion-item style='color:#ffa07a;'>
+      <ion-label style='color:#ffa07a;'>Tipo da peça:</ion-label>
+      <ion-select [(ngModel)]='produto.tipo' style='color:#ffa07a;'>
+      <ion-option value ='higher' name ='tipo'>Higher</ion-option>
+      <ion-option value ='bottom' name ='tipo'>Bottom</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf=" produto.tipo == 'higher'">
+      <ion-item style='color:#ffa07a;'>
+        <ion-label style='color:#ffa07a;'>
+          Nome:
+        </ion-label>
+        <ion-input style='color:#ffa07a;' name='nome'[(ngModel)] = "produto.nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Descrição:
+        </ion-label>
+        <ion-input style='color:#ffa07a;' name='descricao'[(ngModel)] = "produto.descricao"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Preço:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='preco' [(ngModel)] = "produto.preco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Manga:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;'name='med1' [(ngModel)] = "produto.med1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Ombro:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='med2' [(ngModel)] = "produto.med2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Altura:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='med3' [(ngModel)] = "produto.med3"></ion-input>
+      </ion-item>
+    </div>
+    
+    
+    <div *ngIf=" produto.tipo == 'bottom'">
+      <ion-item style='color:#ffa07a;'>
+        <ion-label style='color:#ffa07a;'>
+          Nome:
+        </ion-label>
+        <ion-input style='color:#ffa07a;' name='nome'[(ngModel)] = "produto.nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Descrição:
+        </ion-label>
+        <ion-input style='color:#ffa07a;' name='descricao'[(ngModel)] = "produto.descricao"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Preço:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='preco' [(ngModel)] = "produto.preco"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Cintura:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;'name='med1' [(ngModel)] = "produto.med1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Comprimento:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='med2' [(ngModel)] = "produto.med2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label style='color:#ffa07a;'>
+          Barra:
+        </ion-label>
+        <ion-input type='number' style='color:#ffa07a;' name='med3' [(ngModel)] = "produto.med3"></ion-input>
+      </ion-item>
+    </div>
+    <button ion-button color='color1' (click)="uploadFile()" block>Upload</button>
+    
+  </ion-content>
+</ion-content>

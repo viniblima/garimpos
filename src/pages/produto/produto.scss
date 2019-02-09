@@ -1,0 +1,56 @@
+page-produto {
+    
+    [text-color="color"] {
+        color: white;
+    }
+    .icon{
+        color: white
+    }
+    .div2{
+        text-align: center;
+        background-color: #ffa07a;
+        
+        
+    }
+    .heart{
+        
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        left: 80%;
+        top: 10%;
+
+    }
+    .heart2{
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        left: 80%;
+        top: 10%;
+    }
+    .div1{
+        
+        text-align: center;
+    }
+    .home{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        position: absolute;
+        left: 43.5%;
+        bottom: 1%;
+    }
+    .reservar{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 15px;
+    }
+    .button{
+        border-width: thin;
+        border-style: solid;
+        border-color: gray;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+}

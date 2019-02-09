@@ -1,0 +1,31 @@
+
+<ion-content style="background-color: #ffa07a;">
+  <br/><br/><br/><br/>
+  <img src ='assets/imgs/logo.png' class='home' />
+  <form id="login-form1">
+    <ion-list id="login-list2" padding>
+      <ion-item>
+        <ion-label style = "color: #ffa07a">
+          Email:
+        </ion-label>
+        <ion-input type="email" [(ngModel)] = "usuario.email" name = "email" style = "color: #ffa07a"></ion-input>
+      </ion-item>
+      <br/><br/>
+      <ion-item>
+        <ion-label style = "color: #ffa07a" >
+          Senha:
+        </ion-label>
+        <ion-input type="password" [(ngModel)] = "usuario.senha" name = "senha" style = "color: #ffa07a"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1" padding>
+    <button id="login-button1" (click)="login()" ion-button color="light" block>
+      Login
+    </button>
+    
+    <button id="login-button2" ion-button clear  block on-click="goToSignup()" style="color: white">
+      Ou crie uma conta!
+    </button>
+  </div>
+  </form>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+    
+    <ion-navbar color='color1'>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu" class ='icon'></ion-icon>
+          </button>
+      <img src ='assets/imgs/logo.png' class='home'(click)='home()'/>
+    
+      
+          <ion-buttons end>
+            <button ion-button icon-only (click)="carrinho()">
+              <ion-icon name="basket"></ion-icon>
+            </button>
+          </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+
+
+<ion-content>
+    <div class='div1'>
+      <h1>Obrigado por comprar na Garimpos e cia.!</h1>
+      <br/>
+          <p>Lembrando que você tem até um dia útil para seu pagamento ser confirmado ou sua peça vai estar disponível para outro comprador</p><br/><br/><br/>
+      
+      <img src = '../../assets/imgs/bradesco.png' class ='logo1'/> Bradesco<br/>Agência: XXXX<br/> C/C: XXXXX-X<br/>Garimpos e Cia.<br/><br/><br/><br/>
+      <img src = '../../assets/imgs/itau.png' class ='logo1'/> Itaú Unibando<br/>Agência: XXXX<br/> C/C: XXXXX-X<br/>Garimpos e Cia.
+      <br/><br/><br/>
+    <h1>Valor Total: {{valor_total}}</h1>
+    
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <div class ='div2'>
+        <br/><br/><br/><br/><br/>
+          <h4>Contato:<br/>(11) 97210-5529</h4><br/>
+          <h4>Atendimento via Whatsapp:<br/>(11) 95969-6881</h4><br/><br/>
+          <h6>Whitec Solutions<br/>CNPJ 31.328.421/0001-70<br/>Rua Brás Cubas, 49 - Jardim Santo Antônio<br/>Osasco-SP - CEP 06152-050</h6>
+          </div>
+</ion-content>

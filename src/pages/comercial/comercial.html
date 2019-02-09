@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color='color1'>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" class ='icon'></ion-icon>
+    </button>
+
+    
+    <img src ='assets/imgs/logo.png' class='home' (click)='signUp()'/>
+    
+
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="minhaConta()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="carrinho()">
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<img src='{{img}}' class='img'/>
+
+<div class = 'curtidas'>
+  <h3>{{num_curtidas}}</h3>
+  <h4>CURTIDAS</h4>
+</div>
+
+<div class='pecas'>
+  <h3>{{num_pecas}}</h3>
+  <h4>PEÇAS</h4>
+</div>
+
+<div class = 'nome'>
+  <h2>{{nome}}</h2>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<h3 style='text-align: center;'><b>Produtos deste vendedor:</b></h3>
+
+<ion-slides>
+
+  <ion-slide  *ngFor = 'let produto of produto; let i = index' style="max-height:100%;max-width: 500px; padding: 5px;">
+    <img src = '{{produto.img_url}}' style=' max-height: 300px; width: 200px;'/><br/>
+    <p>{{produto.nome}}</p>
+    <h3 class='button' *ngIf="produto.status == 'disponivel' "(click)='seleciona(i)'>COMPRAR</h3>
+    <h3 class='button' *ngIf="produto.status == 'reservado' ">INDISPONÍVEL</h3>
+    <h3 class='button' *ngIf="produto.status == 'vendido' ">INDISPONÍVEL</h3>
+  </ion-slide>
+</ion-slides>
+
+
+</ion-content>

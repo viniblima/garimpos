@@ -1,3 +1,35 @@
 page-list {
+    .home{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        position: absolute;
+        left: 43.5%;
+        bottom: 1%;
+    }
+    [text-color="color"] {
+        color: white;
+    }
+    .icon{
+        color: white
+    }
+    .div2{
+        text-align: center;
+        background-color: #ffa07a;
+        
+        
+    }
+    .button{
+        border-width: thin;
+        border-style: solid;
+        border-color: gray;
+        padding-left: 10px;
+        padding-right: 10px;
 
+    }
+    .div1{
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
 }

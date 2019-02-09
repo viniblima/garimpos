@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color='color1'>
+    
+    <img src ='assets/imgs/logo.png' class='home' (click)='home()'/>
+  
+  <ion-buttons end>
+      <button ion-button icon-only (click)="carrinho()">
+        <ion-icon name="basket" ></ion-icon>
+      </button>
+      
+  </ion-buttons>
+
+</ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+<div class ='div1' padding>
+    <h3><ion-icon name="heart-outline" style='color: black;' class='heart2' (click)='curtir()' *ngIf=" produto.curtido == 'nao curtiu'"></ion-icon></h3><br/>
+    <h3><ion-icon name="heart" style='color: red;' class='heart' (click)='descurtir()' *ngIf=" produto.curtido == 'curtiu'"></ion-icon></h3><br/>
+<img src='{{produto.img_url}}' style=' max-height: 300px; width: 200px;'/>
+<h2><b>{{produto.nome}}</b></h2>
+<h2><b>R$ {{produto.preco}}</b></h2>
+
+<button ion-button color='dark' class='reservar' (click)='reservarAlert()'><h4>RESERVAR</h4></button>
+</div>
+<div padding>
+<p>{{produto.descricao}}</p>
+<p>{{med1}} {{produto.med1}} cm</p>
+<p>{{med2}} {{produto.med2}} cm</p>
+<p>{{med3}} {{produto.med3}} cm</p>
+<p>Valor do frete: R$ {{valor_frete}} </p>
+
+<p>Vendido por: <b (click)='perfil()'>{{produto.nome_vendedor}} (clique para ver informações do vendedor)</b></p>
+<h2 style='text-align: center'>Outros produtos deste vendedor:</h2>
+  <ion-slides>
+
+    <ion-slide  *ngFor = 'let relacionados of relacionados; let i = index' style="max-height:100%;max-width: 500px; padding: 5px;">
+      <img src = '{{relacionados.img_url}}' style=' max-height: 300px; width: 200px;'/><br/>
+      <p>{{relacionados.descricao}}</p>
+      <h3 class='button' (click)='seleciona(i)'>COMPRAR</h3>
+    </ion-slide>
+  </ion-slides>
+
+  
+</div>
+<br/><br/><br/><br/>
+<div class ='div2'>
+  <br/><br/><br/><br/><br/>
+    <h4>Contato:<br/>(11) 97210-5529</h4><br/>
+    <h4>Atendimento via Whatsapp:<br/>(11) 95969-6881</h4><br/><br/>
+    <h6>Whitec Solutions<br/>CNPJ 31.328.421/0001-70<br/>Rua Brás Cubas, 49 - Jardim Santo Antônio<br/>Osasco-SP - CEP 06152-050</h6>
+    </div>
+
+</ion-content>

@@ -1,23 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
+  <ion-navbar color='color1'>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu" class ='icon'></ion-icon>
+        </button>
+    <img src ='assets/imgs/logo.png' class ='home' (click)='home()'/>
+
+  
+      <ion-buttons end>
+          <button ion-button icon-only (click)="minhaConta()">
+              <ion-icon name="person"></ion-icon>
+            </button>
+        <button ion-button icon-only (click)="carrinho()">
+          <ion-icon name="basket"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
-
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content  style ='background-color: #ffa07a'>
+  <ion-item *ngFor='let produto of produto' style = 'text-align: center;' (click)='seleciona(produto)'>
+    <img src='{{produto.img_url}}' style=' max-height: 300px; width: 200px;'/>
+    <h2>{{produto.nome}}</h2>
+    <h2>R$ {{produto.preco}}</h2>
+  </ion-item>
+  <div class ='div2'>
+    <h4>Contato:<br/>(11) 97210-5529</h4><br/>
+    <h4>Atendimento via Whatsapp:<br/>(11) 95969-6881</h4><br/><br/>
+    <h6>Whitec Solutions<br/>CNPJ 31.328.421/0001-70<br/>Rua Brás Cubas, 49 - Jardim Santo Antônio<br/>Osasco-SP - CEP 06152-050</h6>
+    </div>
 </ion-content>

@@ -1,18 +1,50 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+  <ion-navbar color='color1'>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" class ='icon'></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+
+    
+    <img src ='assets/imgs/logo.png' class='home' />
+    
+
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="minhaConta()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="carrinho()">
+        <ion-icon name="basket"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content style ='background-color: #ffa07a'>
+  <div class='div1'>Olá, {{nome}}</div>
+  <div style ='background-color:white;'>
+  
+  <img src ='../../assets/imgs/top.png' style='width: 100%;' (click)="higher(type)"/>
+  <img src ='../../assets/imgs/calcas.png' style='width: 100%;' (click)="bottom(type)"/>
+  <img src ='../../assets/imgs/acessorios.png' style='width: 100%;'(click)="acessorios(type)"/>
+  <br/><br/><br/>
+  <h2 style='text-align: center'>Novidades do dia:</h2>
+  <ion-slides>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-slide  *ngFor = 'let produto of produto; let i = index' style="max-height:100%;max-width: 500px; padding: 5px;">
+      <img src = '{{produto.img_url}}' style=' max-height: 300px; width: 200px;'/><br/>
+      
+      <h3 class='button' (click)='seleciona(produto)'>COMPRAR</h3>
+    </ion-slide>
+  </ion-slides>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  
+</div>
+<div class ='div2'>
+<h4>Contato:<br/>(11) 97210-5529</h4><br/>
+<h4>Atendimento via Whatsapp:<br/>(11) 95969-6881</h4><br/><br/>
+<h6>Whitec Solutions<br/>CNPJ 31.328.421/0001-70<br/>Rua Brás Cubas, 49 - Jardim Santo Antônio<br/>Osasco-SP - CEP 06152-050</h6>
+</div>
+  
+
 </ion-content>

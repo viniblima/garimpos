@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="color1">
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    <span text-color="color">
+    Cadastro
+    </span>
+  </ion-title>
+</ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #ffa07a;" padding>
+<img src ='assets/imgs/logo.png' class='home' />
+<form id="cadastro-form2">
+  <ion-list id="cadastro-list3">
+      
+      <img [src] = 'base64Image' *ngIf='base64Image != undefined'/>
+    
+    <ion-item>
+    <ion-label style = "color: #ffa07a">
+      Primeiro Nome
+    </ion-label>
+    <ion-input type="text" [(ngModel)] = "usuario.nome" name = "nome" placeholder="" style = "color: #ffa07a"></ion-input>
+    </ion-item>
+    <br/><br/>
+    <ion-item>
+    <ion-label style = "color: #ffa07a">
+      Email
+    </ion-label>
+    <ion-input type="text" [(ngModel)] = "usuario.email" name = "email" placeholder="" style = "color: #ffa07a"></ion-input>
+    </ion-item>
+    <br/><br/>
+    <ion-item>
+    <ion-label style = "color: #ffa07a">
+      Password
+    </ion-label>
+    <ion-input type="text" [(ngModel)] = "usuario.senha" name = "senha" placeholder="" style = "color: #ffa07a"></ion-input>
+    </ion-item>
+    <br/><br/>
+    <ion-item>
+    <ion-label style = "color: #ffa07a" >
+      CEP
+    </ion-label >
+    <ion-input type="text" maxlength='9' [brmasker]="{mask:'00000-000', len:9}" [(ngModel)] = "usuario.cep" name = "cep" placeholder="(Não adicionar traço)" style = "color: #ffa07a"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+  <button ion-button color="color1" (click)="getImage()" block>Selecionar Imagem</button><br/>
+      <button ion-button color="color1" (click)="getCamera()" block>Tirar Foto</button><br/><br/>
+  <button id="cadastro-button3" (click) = "uploadFile()" ion-button color="light" block>
+    Cadastrar!
+  </button>
+</form>
+</ion-content>

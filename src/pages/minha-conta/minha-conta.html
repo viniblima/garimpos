@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color='color1'>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" class ='icon'></ion-icon>
+    </button>
+
+    
+    <img src ='assets/imgs/logo.png' class='home' (click)='home()'/>
+    
+
+
+    
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <img src = '{{img}}' class='img'/>
+  <div class='div1'>
+    <h2>{{nome}}</h2>
+  </div>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  <div>
+  <ion-list style='text-align: center'>
+    
+     
+    <button ion-button color="dark" block (click)='goToReservas()'>
+      Minhas reservas
+    </button>
+    
+    <br/>
+
+    <button ion-button color="dark" block (click)='goToCurtidas()'>
+        Curtidas
+      </button>
+
+    <br/>
+
+    <button ion-button color="dark" block>
+        Minhas vendas
+    </button>
+
+  </ion-list>
+  </div>
+</ion-content>

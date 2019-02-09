@@ -1,0 +1,33 @@
+<ion-header>
+
+    <ion-navbar color='color1'>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu" class ='icon'></ion-icon>
+          </button>
+      <img src ='assets/imgs/logo.png' class='home' (click)='home()'/>
+    
+    <ion-buttons end>
+        <button ion-button icon-only (click)="minhaConta()">
+          <ion-icon name="person"></ion-icon>
+        </button>
+      </ion-buttons>
+  
+      <ion-buttons end>
+        <button ion-button icon-only (click)="carrinho()">
+          <ion-icon name="basket"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content style ='background-color: #ffa07a'>
+  <ion-list>
+    <ion-item  *ngFor = 'let produto of produto'>
+        <img src = '{{produto.imgurl}}' style='width: 50px;height: 50px;'/>
+        
+        <b class ='text'> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{produto.nome}}</b>
+        <b class ='text'> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;R$ {{produto.preco}}</b>
+      </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+page-sign-up {
+    .titleicon {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        text-align:center;
+    }
+    [text-color="color"] {
+        color: white;
+    }
+    .icon{
+        color: white
+    }
+    .div2{
+        text-align: center;
+        background-color: #ffa07a;
+        
+        
+    }
+    .button{
+        border-width: thin;
+        border-style: solid;
+        border-color: gray;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+    .div1{
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    .rotate{
+        
+        
+        max-width: 500px;
+        left: -25%;
+        position: relative;
+        
+    }
+    .home{
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        position: relative;
+        left: 38%;
+        
+    }
+}
